@@ -1,0 +1,86 @@
+--- 
+title: "ME143 - Unmanned Aircraft Systems"
+author: "Dr. Brandon Stark"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Course material for ME143"
+---
+
+# Course Information
+
+This is the course lecture material for UC Merced ME143.  All course assignments, exams, quizzes and the syllabus can be found in Catcourses.
+
+For information on how to compile or edit the course material, please visit the github repository.
+
+## Example Test
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction {#ch-intro}
+
+Introduction to UAS
+
+## Language and Terminology
+
+## History
+
+## Pop-Culture
+
+
+
+
+This page was published using **bookdown**[@R-bookdown] using RStudio in R Markdown and **knitr** [@xie2015].  The raw files can be found in the corresponding github page here:
+
+<!--chapter:end:01-intro.Rmd-->
+
+# Regulations
+
+## US Regulations
+
+## Airspace Charts
+
+## Issues and Controversies
+
+
+
+<!--chapter:end:02-regulations.Rmd-->
+
+# (PART) UAS Modeling and Control {-}
+
+# UAS Dynamics
+
+## Fixed-Wing Models
+
+## Rotary-Wing Models
+
+We describe our methods in this chapter.
+
+<!--chapter:end:03-dynamics.Rmd-->
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+
+`r if (knitr::is_html_output()) '# References {-}'`
+
+<div id="refs"></div>
+
+<!--chapter:end:references.Rmd-->
+
+# (APPENDIX) Appendix {-}
+
+# Digital Systems
+
+# Vector Notation
+
+<!--chapter:end:appendix.Rmd-->
+

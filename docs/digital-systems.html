@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Digital Systems | ME143 - Unmanned Aircraft Systems</title>
+  <meta name="description" content="Course material for ME143" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Digital Systems | ME143 - Unmanned Aircraft Systems" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course material for ME143" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Digital Systems | ME143 - Unmanned Aircraft Systems" />
+  
+  <meta name="twitter:description" content="Course material for ME143" />
+  
+
+<meta name="author" content="Dr. Brandon Stark" />
+
+
+<meta name="date" content="2020-09-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="references.html"/>
+<link rel="next" href="vector-notation.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Information</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#example-test"><i class="fa fa-check"></i><b>1.1</b> Example Test</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-intro.html"><a href="ch-intro.html#language-and-terminology"><i class="fa fa-check"></i><b>2.1</b> Language and Terminology</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-intro.html"><a href="ch-intro.html#history"><i class="fa fa-check"></i><b>2.2</b> History</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-intro.html"><a href="ch-intro.html#pop-culture"><i class="fa fa-check"></i><b>2.3</b> Pop-Culture</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="regulations.html"><a href="regulations.html"><i class="fa fa-check"></i><b>3</b> Regulations</a><ul>
+<li class="chapter" data-level="3.1" data-path="regulations.html"><a href="regulations.html#us-regulations"><i class="fa fa-check"></i><b>3.1</b> US Regulations</a></li>
+<li class="chapter" data-level="3.2" data-path="regulations.html"><a href="regulations.html#airspace-charts"><i class="fa fa-check"></i><b>3.2</b> Airspace Charts</a></li>
+<li class="chapter" data-level="3.3" data-path="regulations.html"><a href="regulations.html#issues-and-controversies"><i class="fa fa-check"></i><b>3.3</b> Issues and Controversies</a></li>
+</ul></li>
+<li class="part"><span><b>I UAS Modeling and Control</b></span></li>
+<li class="chapter" data-level="4" data-path="uas-dynamics.html"><a href="uas-dynamics.html"><i class="fa fa-check"></i><b>4</b> UAS Dynamics</a><ul>
+<li class="chapter" data-level="4.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>4.1</b> Fixed-Wing Models</a></li>
+<li class="chapter" data-level="4.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>4.2</b> Rotary-Wing Models</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="digital-systems.html"><a href="digital-systems.html"><i class="fa fa-check"></i><b>A</b> Digital Systems</a></li>
+<li class="chapter" data-level="B" data-path="vector-notation.html"><a href="vector-notation.html"><i class="fa fa-check"></i><b>B</b> Vector Notation</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ME143 - Unmanned Aircraft Systems</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="digital-systems" class="section level1">
+<h1><span class="header-section-number">A</span> Digital Systems</h1>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vector-notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ME143UAS.pdf", "ME143UAS.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

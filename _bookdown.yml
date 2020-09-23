@@ -1,0 +1,12 @@
+book_filename: "ME143UAS"
+delete_merged_file: false
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files: ["index.Rmd",
+            "01-intro.Rmd",
+            "02-regulations.Rmd",
+            "03-dynamics.Rmd",
+            "references.Rmd",
+            "appendix.Rmd"]
+output_dir: "docs"

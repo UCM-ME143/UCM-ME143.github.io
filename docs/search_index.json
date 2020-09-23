@@ -1,0 +1,9 @@
+[
+["index.html", "ME143 - Unmanned Aircraft Systems Chapter 1 Course Information 1.1 Example Test", " ME143 - Unmanned Aircraft Systems Dr. Brandon Stark 2020-09-23 Chapter 1 Course Information This is the course lecture material for UC Merced ME143. All course assignments, exams, quizzes and the syllabus can be found in Catcourses. For information on how to compile or edit the course material, please visit the github repository. 1.1 Example Test "],
+["ch-intro.html", "Chapter 2 Introduction 2.1 Language and Terminology 2.2 History 2.3 Pop-Culture", " Chapter 2 Introduction Introduction to UAS 2.1 Language and Terminology 2.2 History 2.3 Pop-Culture This page was published using bookdown(Xie 2020) using RStudio in R Markdown and knitr (Xie 2015). The raw files can be found in the corresponding github page here: "],
+["regulations.html", "Chapter 3 Regulations 3.1 US Regulations 3.2 Airspace Charts 3.3 Issues and Controversies", " Chapter 3 Regulations 3.1 US Regulations 3.2 Airspace Charts 3.3 Issues and Controversies "],
+["uas-dynamics.html", "Chapter 4 UAS Dynamics 4.1 Fixed-Wing Models 4.2 Rotary-Wing Models", " Chapter 4 UAS Dynamics 4.1 Fixed-Wing Models 4.2 Rotary-Wing Models We describe our methods in this chapter. "],
+["references.html", "References", " References Xie, Yihui. 2015. Dynamic Documents with R and Knitr. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. http://yihui.org/knitr/. ———. 2020. Bookdown: Authoring Books and Technical Documents with R Markdown. https://CRAN.R-project.org/package=bookdown. "],
+["digital-systems.html", "A Digital Systems", " A Digital Systems "],
+["vector-notation.html", "B Vector Notation", " B Vector Notation "]
+]

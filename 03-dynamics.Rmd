@@ -1,0 +1,9 @@
+# (PART) UAS Modeling and Control {-}
+
+# UAS Dynamics
+
+## Fixed-Wing Models
+
+## Rotary-Wing Models
+
+We describe our methods in this chapter.
