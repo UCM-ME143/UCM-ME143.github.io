@@ -73,8 +73,23 @@
 
 \title{ME143 - Unmanned Aircraft Systems}
 \author{Dr.~Brandon Stark}
-\date{2020-09-23}
+\date{2020-09-24}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -89,19 +104,162 @@ This is the course lecture material for UC Merced ME143. All course assignments,
 
 For information on how to compile or edit the course material, please visit the github repository.
 
-\hypertarget{example-test}{%
-\section{Example Test}\label{example-test}}
+\begin{center}\includegraphics[width=0.5\linewidth]{images/general/UCM_heart} \end{center}
 
 \hypertarget{ch-intro}{%
 \chapter{Introduction}\label{ch-intro}}
 
 Introduction to UAS
 
+\textbf{Daily Show with Jon Stewart (January 2013) - Interview with Missy Cummings - Rise of the Drones}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{http://www.cc.com/video-clips/87aevs/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--1?xrs=share_copy_email}
+\item
+  \url{http://www.cc.com/video-clips/rwkvkp/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--2}
+\item
+  \url{http://www.cc.com/video-clips/91upnm/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--3}
+\end{itemize}
+
 \hypertarget{language-and-terminology}{%
 \section{Language and Terminology}\label{language-and-terminology}}
 
+\begin{definition}[Unmanned Aircraft]
+\protect\hypertarget{def:defUA}{}{\label{def:defUA} \iffalse (Unmanned Aircraft) \fi{} }A drone, remote-controlled pilotless aircraft, or a human-designed device that is used to intended to be used for flight in the air that is operated without the possibility of direct human intervention from within or on the aircraft.
+\end{definition}
+
+\begin{definition}[Unmanned Aircraft System]
+\protect\hypertarget{def:defUAS}{}{\label{def:defUAS} \iffalse (Unmanned Aircraft System) \fi{} }An unmanned aircraft and all of its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the unmanned aircraft.
+\end{definition}
+
+\begin{definition}[Small Unmanned Aircraft]
+\protect\hypertarget{def:defSUA}{}{\label{def:defSUA} \iffalse (Small Unmanned Aircraft) \fi{} }An unmanned aircraft that weighs less than 55 lbs on takeoff, including everything that is on board or otherwise attached to the aircraft.
+\end{definition}
+
+\begin{definition}[Small Unmanned Aircraft System]
+\protect\hypertarget{def:defSUAS}{}{\label{def:defSUAS} \iffalse (Small Unmanned Aircraft System) \fi{} }A small unmanned aircraft and its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the small unmanned aircraft.
+\end{definition}
+
+\begin{corollary}[Model Aircraft]
+\protect\hypertarget{cor:defMA}{}{\label{cor:defMA} \iffalse (Model Aircraft) \fi{} }In the current regulatory framework, there is no definition of a model aircraft or legal distinction between the flying toy you buy at Walmart, the RC plane from the hobby store or a 30 lb industrial drone. All are considered Unmanned Aircraft.
+\end{corollary}
+
+Unmanned Aircraft refers to just to the object that flies, but is usually only used when there is a need to make a distinction. The same with small UAS (sUAS) and UAS - it's usually only used when there needs to be an explicit distinction between drones under 55 lbs and those that are heavier than 55 lbs.
+
+\hypertarget{some-examples-of-unmanned-aircraft-systems}{%
+\subsection{Some examples of Unmanned Aircraft Systems}\label{some-examples-of-unmanned-aircraft-systems}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/general/quadrotor} 
+
+}
+
+\caption{A regular quadrotor design}\label{fig:quad}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/general/rc_plane} 
+
+}
+
+\caption{A remote control plane (rc plane)}\label{fig:rcplane}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/general/military_drone} 
+
+}
+
+\caption{A military drone}\label{fig:militarydrone}
+\end{figure}
+
+\hypertarget{some-other-names-of-drones}{%
+\subsection{Some other names of drones}\label{some-other-names-of-drones}}
+
+UAV - unmanned aircraft vehicle
+
+UAS - unmanned aerial system
+
+RPAS - remotely piloted aircraft system
+
+\begin{itemize}
+\tightlist
+\item
+  Commonly used internationally
+\end{itemize}
+
+Multi-rotor and similar terms
+
+\begin{itemize}
+\tightlist
+\item
+  quadrotor, quadcopter
+\item
+  hexirotor, hexicopter
+\end{itemize}
+
+\begin{quote}
+Helicopter is derived from `helico' (spiral/whirl) and `ptero' (wing as in pterodactyl) from Greek. Despite it's common use, `copter' isn't actually a valid suffix.
+\end{quote}
+
+\begin{quote}
+Even worse, `quad' is a Latin prefix. So when you say `quadcopter' you're mixing a Latin prefix with a mangled Greek suffix. Truly an American English word.
+\end{quote}
+
+\hypertarget{common-drone-manufacturers}{%
+\subsection{Common Drone Manufacturers}\label{common-drone-manufacturers}}
+
+\begin{itemize}
+\tightlist
+\item
+  DJI - (Da-Jiang Innovations) - \url{https://www.dji.com/}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Probably the most well-known and ubiquous non-military drone company
+  \end{itemize}
+\item
+  Sensefly - Parrot Group - \url{https://www.sensefly.com/}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Most known for their eBee foam fixed-wing drone for mapping operations
+  \end{itemize}
+\end{itemize}
+
 \hypertarget{history}{%
 \section{History}\label{history}}
+
+A short timeline of notable UAS history
+
+\begin{itemize}
+\tightlist
+\item
+  The first ``claimed'' heavier-than-air, powered flight was of a UAS over the Potomac River, by Dr.~Sam Langley (1896)
+\item
+  The first radio-controlled UAS flights were converted Navy trainers, flown over Long Island using the recently invented automatic gyroscopic stabilizer (1917)
+\item
+  The first mass production UAS was the Kettering Bug, costing \$400 and capable of carrying a 300 lb (1918) - History Channel clip - \url{https://youtu.be/gNO84yh2ZxY}
+\item
+  The British Queen Bee UAS was landed by dragging a weighted antenna line on the ground, which then pulled back the stick and the throttle to become the first re-usable UAS (1935)
+\item
+  Reginald Denny (actor and model aircraft enthusiast) signed a contract with the Navy to deliver TDD-1 (Target Drone Denny 1) in 1939
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The first recorded instance of `drone' being associated with a UAS
+  \end{itemize}
+\end{itemize}
+
+Where does the term `Drone' come from?
 
 \hypertarget{pop-culture}{%
 \section{Pop-Culture}\label{pop-culture}}

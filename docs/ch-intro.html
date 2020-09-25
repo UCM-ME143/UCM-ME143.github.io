@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Brandon Stark" />
 
 
-<meta name="date" content="2020-09-23" />
+<meta name="date" content="2020-09-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -70,11 +70,13 @@
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Information</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#example-test"><i class="fa fa-check"></i><b>1.1</b> Example Test</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Information</a></li>
 <li class="chapter" data-level="2" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="ch-intro.html"><a href="ch-intro.html#language-and-terminology"><i class="fa fa-check"></i><b>2.1</b> Language and Terminology</a></li>
+<li class="chapter" data-level="2.1" data-path="ch-intro.html"><a href="ch-intro.html#language-and-terminology"><i class="fa fa-check"></i><b>2.1</b> Language and Terminology</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="ch-intro.html"><a href="ch-intro.html#some-examples-of-unmanned-aircraft-systems"><i class="fa fa-check"></i><b>2.1.1</b> Some examples of Unmanned Aircraft Systems</a></li>
+<li class="chapter" data-level="2.1.2" data-path="ch-intro.html"><a href="ch-intro.html#some-other-names-of-drones"><i class="fa fa-check"></i><b>2.1.2</b> Some other names of drones</a></li>
+<li class="chapter" data-level="2.1.3" data-path="ch-intro.html"><a href="ch-intro.html#common-drone-manufacturers"><i class="fa fa-check"></i><b>2.1.3</b> Common Drone Manufacturers</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="ch-intro.html"><a href="ch-intro.html#history"><i class="fa fa-check"></i><b>2.2</b> History</a></li>
 <li class="chapter" data-level="2.3" data-path="ch-intro.html"><a href="ch-intro.html#pop-culture"><i class="fa fa-check"></i><b>2.3</b> Pop-Culture</a></li>
 </ul></li>
@@ -115,11 +117,109 @@
 <div id="ch-intro" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
 <p>Introduction to UAS</p>
+<p><strong>Daily Show with Jon Stewart (January 2013) - Interview with Missy Cummings - Rise of the Drones</strong></p>
+<ul>
+<li><a href="http://www.cc.com/video-clips/87aevs/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--1?xrs=share_copy_email" class="uri">http://www.cc.com/video-clips/87aevs/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--1?xrs=share_copy_email</a></li>
+<li><a href="http://www.cc.com/video-clips/rwkvkp/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--2" class="uri">http://www.cc.com/video-clips/rwkvkp/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--2</a></li>
+<li><a href="http://www.cc.com/video-clips/91upnm/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--3" class="uri">http://www.cc.com/video-clips/91upnm/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--3</a></li>
+</ul>
 <div id="language-and-terminology" class="section level2">
 <h2><span class="header-section-number">2.1</span> Language and Terminology</h2>
+
+<div class="definition">
+<p><span id="def:defUA" class="definition"><strong>Definition 2.1  (Unmanned Aircraft)  </strong></span>A drone, remote-controlled pilotless aircraft, or a human-designed device that is used to intended to be used for flight in the air that is operated without the possibility of direct human intervention from within or on the aircraft.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:defUAS" class="definition"><strong>Definition 2.2  (Unmanned Aircraft System)  </strong></span>An unmanned aircraft and all of its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the unmanned aircraft.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:defSUA" class="definition"><strong>Definition 2.3  (Small Unmanned Aircraft)  </strong></span>An unmanned aircraft that weighs less than 55 lbs on takeoff, including everything that is on board or otherwise attached to the aircraft.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:defSUAS" class="definition"><strong>Definition 2.4  (Small Unmanned Aircraft System)  </strong></span>A small unmanned aircraft and its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the small unmanned aircraft.</p>
+</div>
+
+
+<div class="corollary">
+<p><span id="cor:defMA" class="corollary"><strong>Corollary 2.1  (Model Aircraft)  </strong></span>In the current regulatory framework, there is no definition of a model aircraft or legal distinction between the flying toy you buy at Walmart, the RC plane from the hobby store or a 30 lb industrial drone. All are considered Unmanned Aircraft.</p>
+</div>
+
+<p>Unmanned Aircraft refers to just to the object that flies, but is usually only used when there is a need to make a distinction. The same with small UAS (sUAS) and UAS - it’s usually only used when there needs to be an explicit distinction between drones under 55 lbs and those that are heavier than 55 lbs.</p>
+<div id="some-examples-of-unmanned-aircraft-systems" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Some examples of Unmanned Aircraft Systems</h3>
+<div class="figure" style="text-align: center"><span id="fig:quad"></span>
+<img src="images/general/quadrotor.jpg" alt="A regular quadrotor design" width="50%" />
+<p class="caption">
+Figure 2.1: A regular quadrotor design
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:rcplane"></span>
+<img src="images/general/rc_plane.jpg" alt="A remote control plane (rc plane)" width="50%" />
+<p class="caption">
+Figure 2.2: A remote control plane (rc plane)
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:militarydrone"></span>
+<img src="images/general/military_drone.jpg" alt="A military drone" width="50%" />
+<p class="caption">
+Figure 2.3: A military drone
+</p>
+</div>
+</div>
+<div id="some-other-names-of-drones" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Some other names of drones</h3>
+<p>UAV - unmanned aircraft vehicle</p>
+<p>UAS - unmanned aerial system</p>
+<p>RPAS - remotely piloted aircraft system</p>
+<ul>
+<li>Commonly used internationally</li>
+</ul>
+<p>Multi-rotor and similar terms</p>
+<ul>
+<li>quadrotor, quadcopter</li>
+<li>hexirotor, hexicopter</li>
+</ul>
+<blockquote>
+<p>Helicopter is derived from ‘helico’ (spiral/whirl) and ‘ptero’ (wing as in pterodactyl) from Greek. Despite it’s common use, ‘copter’ isn’t actually a valid suffix.</p>
+</blockquote>
+<blockquote>
+<p>Even worse, ‘quad’ is a Latin prefix. So when you say ‘quadcopter’ you’re mixing a Latin prefix with a mangled Greek suffix. Truly an American English word.</p>
+</blockquote>
+</div>
+<div id="common-drone-manufacturers" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Common Drone Manufacturers</h3>
+<ul>
+<li>DJI - (Da-Jiang Innovations) - <a href="https://www.dji.com/" class="uri">https://www.dji.com/</a>
+<ul>
+<li>Probably the most well-known and ubiquous non-military drone company</li>
+</ul></li>
+<li>Sensefly - Parrot Group - <a href="https://www.sensefly.com/" class="uri">https://www.sensefly.com/</a>
+<ul>
+<li>Most known for their eBee foam fixed-wing drone for mapping operations</li>
+</ul></li>
+</ul>
+</div>
 </div>
 <div id="history" class="section level2">
 <h2><span class="header-section-number">2.2</span> History</h2>
+<p>A short timeline of notable UAS history</p>
+<ul>
+<li>The first “claimed” heavier-than-air, powered flight was of a UAS over the Potomac River, by Dr. Sam Langley (1896)</li>
+<li>The first radio-controlled UAS flights were converted Navy trainers, flown over Long Island using the recently invented automatic gyroscopic stabilizer (1917)</li>
+<li>The first mass production UAS was the Kettering Bug, costing $400 and capable of carrying a 300 lb (1918) - History Channel clip - <a href="https://youtu.be/gNO84yh2ZxY" class="uri">https://youtu.be/gNO84yh2ZxY</a></li>
+<li>The British Queen Bee UAS was landed by dragging a weighted antenna line on the ground, which then pulled back the stick and the throttle to become the first re-usable UAS (1935)</li>
+<li>Reginald Denny (actor and model aircraft enthusiast) signed a contract with the Navy to deliver TDD-1 (Target Drone Denny 1) in 1939
+<ul>
+<li>The first recorded instance of ‘drone’ being associated with a UAS</li>
+</ul></li>
+</ul>
+<p>Where does the term ‘Drone’ come from?</p>
 </div>
 <div id="pop-culture" class="section level2">
 <h2><span class="header-section-number">2.3</span> Pop-Culture</h2>

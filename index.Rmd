@@ -16,4 +16,6 @@ This is the course lecture material for UC Merced ME143.  All course assignments
 
 For information on how to compile or edit the course material, please visit the github repository.
 
-## Example Test
+```{r ucmheart,echo=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics('images/general/UCM_heart.jpg')
+```
