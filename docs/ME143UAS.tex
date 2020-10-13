@@ -73,7 +73,7 @@
 
 \title{ME143 - Unmanned Aircraft Systems}
 \author{Dr.~Brandon Stark}
-\date{2020-09-24}
+\date{2020-10-12}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -105,6 +105,8 @@ This is the course lecture material for UC Merced ME143. All course assignments,
 For information on how to compile or edit the course material, please visit the github repository.
 
 \begin{center}\includegraphics[width=0.5\linewidth]{images/general/UCM_heart} \end{center}
+
+This page was published using \textbf{bookdown}\citep{R-bookdown} using RStudio in R Markdown and \textbf{knitr} \citep{xie2015}. The raw files can be found in the corresponding github page here: \url{https://github.com/UCM-ME143/UCM-ME143.github.io}
 
 \hypertarget{ch-intro}{%
 \chapter{Introduction}\label{ch-intro}}
@@ -204,11 +206,7 @@ Multi-rotor and similar terms
 \end{itemize}
 
 \begin{quote}
-Helicopter is derived from `helico' (spiral/whirl) and `ptero' (wing as in pterodactyl) from Greek. Despite it's common use, `copter' isn't actually a valid suffix.
-\end{quote}
-
-\begin{quote}
-Even worse, `quad' is a Latin prefix. So when you say `quadcopter' you're mixing a Latin prefix with a mangled Greek suffix. Truly an American English word.
+Helicopter is derived from `helico' (spiral/whirl) and `ptero' (wing as in pterodactyl) from Greek. Despite it's common use, `copter' isn't actually a valid suffix. Even worse, `quad' is a Latin prefix. So when you say `quadcopter' you're mixing a Latin prefix with a mangled Greek suffix. Truly an American English word.
 \end{quote}
 
 \hypertarget{common-drone-manufacturers}{%
@@ -259,12 +257,82 @@ A short timeline of notable UAS history
   \end{itemize}
 \end{itemize}
 
-Where does the term `Drone' come from?
+\hypertarget{drones-as-guided-missles}{%
+\subsection{Drones as Guided Missles}\label{drones-as-guided-missles}}
+
+The \href{https://en.wikipedia.org/wiki/Kettering_Bug}{Kettering Bug} is regarded as one of the very first mass produced drones - but it's also known as one of the first `guided torpedoes.' It was practically a bomb with an engine and wings to give it flight. But nonetheless, it was equipped with a rudimentary inertial control system that kept it stabilized in flight. After a preset number of engine revolutions, the engine would shut down and let the bomb fall.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/history/Kettering_Bug} 
+
+}
+
+\caption{Kettering Bug}\label{fig:kbug}
+\end{figure}
+
+With no way to control the Kettering Bug after launch, they had limited value and were deployed too late in WWI to be of value.
+
+\hypertarget{drones-as-target-practice}{%
+\subsection{Drones as Target Practice}\label{drones-as-target-practice}}
+
+However, after the Kettering Bug, new advances in radio control allowed for remotely controlling an aircraft in flight. It was finally with these advances that drones became instrumental in the changing shape of warfare.
+
+\begin{quote}
+The British Royal Air Force was in a debate with the Royal Navy over the ability of an airplane to sink a ship. In the early 1920s, General Billy Mitchell of the Army Air Corps sunk a war prize German battleship and subsequent older target warships to the dismay of the U.S. Navy. The counterargument to these demonstrations was that a fully manned ship armed with antiaircraft guns would easily shoot down attacking aircraft. The British used unmanned target drones flown over such armed warships to test the validity of the argument. In 1933, to the surprise of all, a target drone flew over 40 missions above Royal Navy warships armed with the latest antiaircraft guns without being shot down.
+\end{quote}
+
+Demonstrations like the above quickly demonstrated two issues: 1) the value of air superiority and 2) the need for anti-aircraft weaponry training. Drones as one-time targets, such as the TDD-1 and \href{https://en.wikipedia.org/wiki/Radioplane_OQ-2}{OQ-2 Radioplane} were instrumental in preparing for WW2.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/history/KAQ-1_Drone} 
+
+}
+
+\caption{Kawasaki KAQ-1 - A rare 1950s era target drone on display at the Castle Air Museum}\label{fig:KAQ}
+\end{figure}
+
+\begin{quote}
+\textbf{Where does the term `Drone' come from?} The origins of the term `Drone' is lost to history, but the first recorded use is from 1939 - Target Drone Denny-1. However, there is precident for naming aircraft after insects (1929 Gipsy Moth) and the \href{https://www.dehavillandmuseum.co.uk/aircraft/de-havilland-dh82b-queen-bee/}{1935 Queen Bee} was the first returnable and resusable drone used for target practice. This relationship lends credance to the term `drone' being so named as a reference to worker bees.
+\end{quote}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/history/QueenBee} 
+
+}
+
+\caption{The DeHavilland DH-82B Queen Bee  }\label{fig:QueenBee}
+\end{figure}
+
+\hypertarget{modern-drones}{%
+\subsection{Modern Drones}\label{modern-drones}}
+
+Currently, we now think of drones as what you saw in Figures \ref{fig:quad} and \ref{fig:militarydrone}. Either as these small quadrotor toys or large military weapons. But there's surprisingly not that large of a difference between the two.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/history/Venezuela1} 
+
+}
+
+\caption{Assassination Attempt}\label{fig:venAssassin}
+\end{figure}
+
+This was a relatively high-profile assassination attempt of the Venezuela President in August 2018. While there remains questions about the legitimacy of the attack, the drone and the explosion were real. This wasn't a military drone - this was a DJI Matrice 200 that was loaded with 2 lbs of explosives.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/history/Venezuela2} 
+
+}
+
+\caption{Scorched Building from Drone Assassination Attempt}\label{fig:venAssassin2}
+\end{figure}
 
 \hypertarget{pop-culture}{%
 \section{Pop-Culture}\label{pop-culture}}
-
-This page was published using \textbf{bookdown}\citep{R-bookdown} using RStudio in R Markdown and \textbf{knitr} \citep{xie2015}. The raw files can be found in the corresponding github page here:
 
 \hypertarget{regulations}{%
 \chapter{Regulations}\label{regulations}}

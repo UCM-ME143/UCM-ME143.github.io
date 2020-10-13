@@ -67,9 +67,7 @@ Multi-rotor and similar terms
  - quadrotor, quadcopter
  - hexirotor, hexicopter
  
-> Helicopter is derived from 'helico' (spiral/whirl) and 'ptero' (wing as in pterodactyl) from Greek.  Despite it's common use, 'copter' isn't actually a valid suffix. 
-
-> Even worse, 'quad' is a Latin prefix.  So when you say 'quadcopter' you're mixing a Latin prefix with a mangled Greek suffix.  Truly an American English word. 
+> Helicopter is derived from 'helico' (spiral/whirl) and 'ptero' (wing as in pterodactyl) from Greek.  Despite it's common use, 'copter' isn't actually a valid suffix. Even worse, 'quad' is a Latin prefix.  So when you say 'quadcopter' you're mixing a Latin prefix with a mangled Greek suffix.  Truly an American English word. 
 
 ### Common Drone Manufacturers
 
@@ -88,15 +86,56 @@ A short timeline of notable UAS history
 - The British Queen Bee UAS was landed by dragging a weighted antenna line on the ground, which then pulled back the stick and the throttle to become the first re-usable UAS (1935)
 - Reginald Denny (actor and model aircraft enthusiast) signed a contract with the Navy to deliver TDD-1 (Target Drone Denny 1) in 1939
     - The first recorded instance of 'drone' being associated with a UAS
-- 4 UAS with 2000 lb bombs attacked the Japanese merchanman, 
 
-Where does the term 'Drone' come from?
+### Drones as Guided Missles
 
- 
+The [Kettering Bug](https://en.wikipedia.org/wiki/Kettering_Bug) is regarded as one of the very first mass produced drones - but it's also known as one of the first 'guided torpedoes.'  It was practically a bomb with an engine and wings to give it flight.  But nonetheless, it was equipped with a rudimentary inertial control system that kept it stabilized in flight.  After a preset number of engine revolutions, the engine would shut down and let the bomb fall. 
+
+```{r kbug,echo=FALSE, fig.cap='Kettering Bug', out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics('images/history/Kettering_Bug.jpg')
+```
+
+With no way to control the Kettering Bug after launch, they had limited value and were deployed too late in WWI to be of value.  
+
+### Drones as Target Practice
+
+However, after the Kettering Bug, new advances in radio control allowed for remotely controlling an aircraft in flight.  It was finally with these advances that drones became instrumental in the changing shape of warfare.  
+
+>The British Royal Air Force was in a debate with the Royal Navy over the ability of an airplane to sink a ship. In the early 1920s, General Billy Mitchell of the Army Air Corps sunk a war prize German battleship and subsequent older target warships to the dismay of the U.S. Navy. The counterargument to these demonstrations was that a fully manned ship armed with antiaircraft guns would easily shoot down attacking aircraft. The British used unmanned target drones flown over such armed warships to test the validity of the argument. In 1933, to the surprise of all, a target drone flew over 40 missions above Royal Navy warships armed with the latest antiaircraft guns without being shot down.
+
+Demonstrations like the above quickly demonstrated two issues: 1) the value of air superiority and 2) the need for anti-aircraft weaponry training.  Drones as one-time targets, such as the TDD-1 and [OQ-2 Radioplane](https://en.wikipedia.org/wiki/Radioplane_OQ-2) were instrumental in preparing for WW2.
+
+```{r KAQ,echo=FALSE, fig.cap='Kawasaki KAQ-1 - A rare 1950s era target drone on display at the Castle Air Museum', out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics('images/history/KAQ-1_Drone.jpg')
+```
+
+
+>**Where does the term 'Drone' come from?** The origins of the term 'Drone' is lost to history, but the first recorded use is from 1939 - Target Drone Denny-1.  However, there is precident for naming aircraft after insects (1929 Gipsy Moth) and the [1935 Queen Bee](https://www.dehavillandmuseum.co.uk/aircraft/de-havilland-dh82b-queen-bee/) was the first returnable and resusable drone used for target practice.  This relationship lends credance to the term 'drone' being so named as a reference to worker bees.
+
+
+
+```{r QueenBee,echo=FALSE, fig.cap='The DeHavilland DH-82B Queen Bee  ', out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics('images/history/QueenBee.jpg')
+```
+
+### Modern Drones
+
+Currently, we now think of drones as what you saw in Figures \@ref(fig:quad) and \@ref(fig:militarydrone).  Either as these small quadrotor toys or large military weapons.  But there's surprisingly not that large of a difference between the two.  
+
+```{r venAssassin,echo=FALSE, fig.cap='Assassination Attempt', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics('images/history/Venezuela1.jpg')
+```
+
+This was a relatively high-profile assassination attempt of the Venezuela President in August 2018.  While there remains questions about the legitimacy of the attack, the drone and the explosion were real.  This wasn't a military drone - this was a DJI Matrice 200 that was loaded with 2 lbs of explosives.  
+
+```{r venAssassin2,echo=FALSE, fig.cap='Scorched Building from Drone Assassination Attempt', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics('images/history/Venezuela2.jpg')
+```
+
+
 
 ## Pop-Culture
 
 
 
 
-This page was published using **bookdown**[@R-bookdown] using RStudio in R Markdown and **knitr** [@xie2015].  The raw files can be found in the corresponding github page here:
