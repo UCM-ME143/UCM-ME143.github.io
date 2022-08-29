@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Introduction | ME143 - Unmanned Aircraft Systems</title>
   <meta name="description" content="Course material for ME143" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Introduction | ME143 - Unmanned Aircraft Systems" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Course material for ME143" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Dr. Brandon Stark" />
 
 
-<meta name="date" content="2020-10-12" />
+<meta name="date" content="2022-08-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="regulations.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,10 +49,98 @@
 
 
 
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -67,32 +155,52 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">ME143</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Information</a></li>
-<li class="chapter" data-level="2" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="ch-intro.html"><a href="ch-intro.html#language-and-terminology"><i class="fa fa-check"></i><b>2.1</b> Language and Terminology</a><ul>
+<li class="chapter" data-level="2" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-intro.html"><a href="ch-intro.html#language-and-terminology"><i class="fa fa-check"></i><b>2.1</b> Language and Terminology</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="ch-intro.html"><a href="ch-intro.html#some-examples-of-unmanned-aircraft-systems"><i class="fa fa-check"></i><b>2.1.1</b> Some examples of Unmanned Aircraft Systems</a></li>
 <li class="chapter" data-level="2.1.2" data-path="ch-intro.html"><a href="ch-intro.html#some-other-names-of-drones"><i class="fa fa-check"></i><b>2.1.2</b> Some other names of drones</a></li>
 <li class="chapter" data-level="2.1.3" data-path="ch-intro.html"><a href="ch-intro.html#common-drone-manufacturers"><i class="fa fa-check"></i><b>2.1.3</b> Common Drone Manufacturers</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="ch-intro.html"><a href="ch-intro.html#history"><i class="fa fa-check"></i><b>2.2</b> History</a><ul>
+<li class="chapter" data-level="2.2" data-path="ch-intro.html"><a href="ch-intro.html#history"><i class="fa fa-check"></i><b>2.2</b> History</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ch-intro.html"><a href="ch-intro.html#drones-as-guided-missles"><i class="fa fa-check"></i><b>2.2.1</b> Drones as Guided Missles</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ch-intro.html"><a href="ch-intro.html#drones-as-target-practice"><i class="fa fa-check"></i><b>2.2.2</b> Drones as Target Practice</a></li>
 <li class="chapter" data-level="2.2.3" data-path="ch-intro.html"><a href="ch-intro.html#modern-drones"><i class="fa fa-check"></i><b>2.2.3</b> Modern Drones</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ch-intro.html"><a href="ch-intro.html#pop-culture"><i class="fa fa-check"></i><b>2.3</b> Pop-Culture</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="regulations.html"><a href="regulations.html"><i class="fa fa-check"></i><b>3</b> Regulations</a><ul>
+<li class="chapter" data-level="3" data-path="regulations.html"><a href="regulations.html"><i class="fa fa-check"></i><b>3</b> Regulations</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="regulations.html"><a href="regulations.html#us-regulations"><i class="fa fa-check"></i><b>3.1</b> US Regulations</a></li>
 <li class="chapter" data-level="3.2" data-path="regulations.html"><a href="regulations.html#airspace-charts"><i class="fa fa-check"></i><b>3.2</b> Airspace Charts</a></li>
 <li class="chapter" data-level="3.3" data-path="regulations.html"><a href="regulations.html#issues-and-controversies"><i class="fa fa-check"></i><b>3.3</b> Issues and Controversies</a></li>
 </ul></li>
 <li class="part"><span><b>I UAS Modeling and Control</b></span></li>
-<li class="chapter" data-level="4" data-path="uas-dynamics.html"><a href="uas-dynamics.html"><i class="fa fa-check"></i><b>4</b> UAS Dynamics</a><ul>
-<li class="chapter" data-level="4.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>4.1</b> Fixed-Wing Models</a></li>
-<li class="chapter" data-level="4.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>4.2</b> Rotary-Wing Models</a></li>
+<li class="chapter" data-level="4" data-path="vectors-notation.html"><a href="vectors-notation.html"><i class="fa fa-check"></i><b>4</b> Vectors Notation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="vectors-notation.html"><a href="vectors-notation.html#rectangular-vectors"><i class="fa fa-check"></i><b>4.1</b> Rectangular Vectors</a></li>
+<li class="chapter" data-level="4.2" data-path="vectors-notation.html"><a href="vectors-notation.html#directional-vectors"><i class="fa fa-check"></i><b>4.2</b> Directional Vectors</a></li>
+<li class="chapter" data-level="4.3" data-path="vectors-notation.html"><a href="vectors-notation.html#norms"><i class="fa fa-check"></i><b>4.3</b> Norms</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="vectors-notation.html"><a href="vectors-notation.html#absolute-value-norm---l1"><i class="fa fa-check"></i><b>4.3.1</b> Absolute Value Norm - L1</a></li>
+<li class="chapter" data-level="4.3.2" data-path="vectors-notation.html"><a href="vectors-notation.html#euclidean-distance-norm---l2"><i class="fa fa-check"></i><b>4.3.2</b> Euclidean Distance Norm - L2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="uas-dynamics.html"><a href="uas-dynamics.html"><i class="fa fa-check"></i><b>5</b> UAS Dynamics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>5.1</b> Fixed-Wing Models</a></li>
+<li class="chapter" data-level="5.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>5.2</b> Rotary-Wing Models</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html"><i class="fa fa-check"></i><b>6</b> Rotation Matrice Example</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
+<li class="chapter" data-level="6.2" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#making-an-airplane"><i class="fa fa-check"></i><b>6.2</b> Making an Airplane</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -118,8 +226,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<div id="ch-intro" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introduction<a href="ch-intro.html#ch-intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Introduction to UAS</p>
 <p><strong>Daily Show with Jon Stewart (January 2013) - Interview with Missy Cummings - Rise of the Drones</strong></p>
 <ul>
@@ -127,57 +235,47 @@
 <li><a href="http://www.cc.com/video-clips/rwkvkp/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--2" class="uri">http://www.cc.com/video-clips/rwkvkp/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--2</a></li>
 <li><a href="http://www.cc.com/video-clips/91upnm/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--3" class="uri">http://www.cc.com/video-clips/91upnm/the-daily-show-with-jon-stewart-exclusive---missy-cummings-extended-interview-pt--3</a></li>
 </ul>
-<div id="language-and-terminology" class="section level2">
-<h2><span class="header-section-number">2.1</span> Language and Terminology</h2>
-
+<div id="language-and-terminology" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Language and Terminology<a href="ch-intro.html#language-and-terminology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:defUA" class="definition"><strong>Definition 2.1  (Unmanned Aircraft)  </strong></span>A drone, remote-controlled pilotless aircraft, or a human-designed device that is used to intended to be used for flight in the air that is operated without the possibility of direct human intervention from within or on the aircraft.</p>
+<p><span id="def:defUA" class="definition"><strong>Definition 2.1  (Unmanned Aircraft) </strong></span>A drone, remote-controlled pilotless aircraft, or a human-designed device that is used to intended to be used for flight in the air that is operated without the possibility of direct human intervention from within or on the aircraft.</p>
 </div>
-
-
 <div class="definition">
-<p><span id="def:defUAS" class="definition"><strong>Definition 2.2  (Unmanned Aircraft System)  </strong></span>An unmanned aircraft and all of its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the unmanned aircraft.</p>
+<p><span id="def:defUAS" class="definition"><strong>Definition 2.2  (Unmanned Aircraft System) </strong></span>An unmanned aircraft and all of its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the unmanned aircraft.</p>
 </div>
-
-
 <div class="definition">
-<p><span id="def:defSUA" class="definition"><strong>Definition 2.3  (Small Unmanned Aircraft)  </strong></span>An unmanned aircraft that weighs less than 55 lbs on takeoff, including everything that is on board or otherwise attached to the aircraft.</p>
+<p><span id="def:defSUA" class="definition"><strong>Definition 2.3  (Small Unmanned Aircraft) </strong></span>An unmanned aircraft that weighs less than 55 lbs on takeoff, including everything that is on board or otherwise attached to the aircraft.</p>
 </div>
-
-
 <div class="definition">
-<p><span id="def:defSUAS" class="definition"><strong>Definition 2.4  (Small Unmanned Aircraft System)  </strong></span>A small unmanned aircraft and its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the small unmanned aircraft.</p>
+<p><span id="def:defSUAS" class="definition"><strong>Definition 2.4  (Small Unmanned Aircraft System) </strong></span>A small unmanned aircraft and its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the small unmanned aircraft.</p>
 </div>
-
-
 <div class="corollary">
-<p><span id="cor:defMA" class="corollary"><strong>Corollary 2.1  (Model Aircraft)  </strong></span>In the current regulatory framework, there is no definition of a model aircraft or legal distinction between the flying toy you buy at Walmart, the RC plane from the hobby store or a 30 lb industrial drone. All are considered Unmanned Aircraft.</p>
+<p><span id="cor:defMA" class="corollary"><strong>Corollary 2.1  (Model Aircraft) </strong></span>In the current regulatory framework, there is no definition of a model aircraft or legal distinction between the flying toy you buy at Walmart, the RC plane from the hobby store or a 30 lb industrial drone. All are considered Unmanned Aircraft.</p>
 </div>
-
 <p>Unmanned Aircraft refers to just to the object that flies, but is usually only used when there is a need to make a distinction. The same with small UAS (sUAS) and UAS - it’s usually only used when there needs to be an explicit distinction between drones under 55 lbs and those that are heavier than 55 lbs.</p>
-<div id="some-examples-of-unmanned-aircraft-systems" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Some examples of Unmanned Aircraft Systems</h3>
-<div class="figure" style="text-align: center"><span id="fig:quad"></span>
+<div id="some-examples-of-unmanned-aircraft-systems" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Some examples of Unmanned Aircraft Systems<a href="ch-intro.html#some-examples-of-unmanned-aircraft-systems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:quad"></span>
 <img src="images/general/quadrotor.jpg" alt="A regular quadrotor design" width="50%" />
 <p class="caption">
 Figure 2.1: A regular quadrotor design
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:rcplane"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rcplane"></span>
 <img src="images/general/rc_plane.jpg" alt="A remote control plane (rc plane)" width="50%" />
 <p class="caption">
 Figure 2.2: A remote control plane (rc plane)
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:militarydrone"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:militarydrone"></span>
 <img src="images/general/military_drone.jpg" alt="A military drone" width="50%" />
 <p class="caption">
 Figure 2.3: A military drone
 </p>
 </div>
 </div>
-<div id="some-other-names-of-drones" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> Some other names of drones</h3>
+<div id="some-other-names-of-drones" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Some other names of drones<a href="ch-intro.html#some-other-names-of-drones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>UAV - unmanned aircraft vehicle</p>
 <p>UAS - unmanned aerial system</p>
 <p>RPAS - remotely piloted aircraft system</p>
@@ -193,8 +291,8 @@ Figure 2.3: A military drone
 <p>Helicopter is derived from ‘helico’ (spiral/whirl) and ‘ptero’ (wing as in pterodactyl) from Greek. Despite it’s common use, ‘copter’ isn’t actually a valid suffix. Even worse, ‘quad’ is a Latin prefix. So when you say ‘quadcopter’ you’re mixing a Latin prefix with a mangled Greek suffix. Truly an American English word.</p>
 </blockquote>
 </div>
-<div id="common-drone-manufacturers" class="section level3">
-<h3><span class="header-section-number">2.1.3</span> Common Drone Manufacturers</h3>
+<div id="common-drone-manufacturers" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Common Drone Manufacturers<a href="ch-intro.html#common-drone-manufacturers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>DJI - (Da-Jiang Innovations) - <a href="https://www.dji.com/" class="uri">https://www.dji.com/</a>
 <ul>
@@ -207,8 +305,8 @@ Figure 2.3: A military drone
 </ul>
 </div>
 </div>
-<div id="history" class="section level2">
-<h2><span class="header-section-number">2.2</span> History</h2>
+<div id="history" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> History<a href="ch-intro.html#history" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A short timeline of notable UAS history</p>
 <ul>
 <li>The first “claimed” heavier-than-air, powered flight was of a UAS over the Potomac River, by Dr. Sam Langley (1896)</li>
@@ -220,10 +318,10 @@ Figure 2.3: A military drone
 <li>The first recorded instance of ‘drone’ being associated with a UAS</li>
 </ul></li>
 </ul>
-<div id="drones-as-guided-missles" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Drones as Guided Missles</h3>
+<div id="drones-as-guided-missles" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Drones as Guided Missles<a href="ch-intro.html#drones-as-guided-missles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <a href="https://en.wikipedia.org/wiki/Kettering_Bug">Kettering Bug</a> is regarded as one of the very first mass produced drones - but it’s also known as one of the first ‘guided torpedoes.’ It was practically a bomb with an engine and wings to give it flight. But nonetheless, it was equipped with a rudimentary inertial control system that kept it stabilized in flight. After a preset number of engine revolutions, the engine would shut down and let the bomb fall.</p>
-<div class="figure" style="text-align: center"><span id="fig:kbug"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kbug"></span>
 <img src="images/history/Kettering_Bug.jpg" alt="Kettering Bug" width="50%" />
 <p class="caption">
 Figure 2.4: Kettering Bug
@@ -231,14 +329,14 @@ Figure 2.4: Kettering Bug
 </div>
 <p>With no way to control the Kettering Bug after launch, they had limited value and were deployed too late in WWI to be of value.</p>
 </div>
-<div id="drones-as-target-practice" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Drones as Target Practice</h3>
+<div id="drones-as-target-practice" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Drones as Target Practice<a href="ch-intro.html#drones-as-target-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>However, after the Kettering Bug, new advances in radio control allowed for remotely controlling an aircraft in flight. It was finally with these advances that drones became instrumental in the changing shape of warfare.</p>
 <blockquote>
 <p>The British Royal Air Force was in a debate with the Royal Navy over the ability of an airplane to sink a ship. In the early 1920s, General Billy Mitchell of the Army Air Corps sunk a war prize German battleship and subsequent older target warships to the dismay of the U.S. Navy. The counterargument to these demonstrations was that a fully manned ship armed with antiaircraft guns would easily shoot down attacking aircraft. The British used unmanned target drones flown over such armed warships to test the validity of the argument. In 1933, to the surprise of all, a target drone flew over 40 missions above Royal Navy warships armed with the latest antiaircraft guns without being shot down.</p>
 </blockquote>
 <p>Demonstrations like the above quickly demonstrated two issues: 1) the value of air superiority and 2) the need for anti-aircraft weaponry training. Drones as one-time targets, such as the TDD-1 and <a href="https://en.wikipedia.org/wiki/Radioplane_OQ-2">OQ-2 Radioplane</a> were instrumental in preparing for WW2.</p>
-<div class="figure" style="text-align: center"><span id="fig:KAQ"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:KAQ"></span>
 <img src="images/history/KAQ-1_Drone.jpg" alt="Kawasaki KAQ-1 - A rare 1950s era target drone on display at the Castle Air Museum" width="50%" />
 <p class="caption">
 Figure 2.5: Kawasaki KAQ-1 - A rare 1950s era target drone on display at the Castle Air Museum
@@ -247,24 +345,24 @@ Figure 2.5: Kawasaki KAQ-1 - A rare 1950s era target drone on display at the Cas
 <blockquote>
 <p><strong>Where does the term ‘Drone’ come from?</strong> The origins of the term ‘Drone’ is lost to history, but the first recorded use is from 1939 - Target Drone Denny-1. However, there is precident for naming aircraft after insects (1929 Gipsy Moth) and the <a href="https://www.dehavillandmuseum.co.uk/aircraft/de-havilland-dh82b-queen-bee/">1935 Queen Bee</a> was the first returnable and resusable drone used for target practice. This relationship lends credance to the term ‘drone’ being so named as a reference to worker bees.</p>
 </blockquote>
-<div class="figure" style="text-align: center"><span id="fig:QueenBee"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:QueenBee"></span>
 <img src="images/history/QueenBee.jpg" alt="The DeHavilland DH-82B Queen Bee  " width="50%" />
 <p class="caption">
 Figure 2.6: The DeHavilland DH-82B Queen Bee
 </p>
 </div>
 </div>
-<div id="modern-drones" class="section level3">
-<h3><span class="header-section-number">2.2.3</span> Modern Drones</h3>
+<div id="modern-drones" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Modern Drones<a href="ch-intro.html#modern-drones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Currently, we now think of drones as what you saw in Figures <a href="ch-intro.html#fig:quad">2.1</a> and <a href="ch-intro.html#fig:militarydrone">2.3</a>. Either as these small quadrotor toys or large military weapons. But there’s surprisingly not that large of a difference between the two.</p>
-<div class="figure" style="text-align: center"><span id="fig:venAssassin"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:venAssassin"></span>
 <img src="images/history/Venezuela1.jpg" alt="Assassination Attempt" width="80%" />
 <p class="caption">
 Figure 2.7: Assassination Attempt
 </p>
 </div>
 <p>This was a relatively high-profile assassination attempt of the Venezuela President in August 2018. While there remains questions about the legitimacy of the attack, the drone and the explosion were real. This wasn’t a military drone - this was a DJI Matrice 200 that was loaded with 2 lbs of explosives.</p>
-<div class="figure" style="text-align: center"><span id="fig:venAssassin2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:venAssassin2"></span>
 <img src="images/history/Venezuela2.jpg" alt="Scorched Building from Drone Assassination Attempt" width="80%" />
 <p class="caption">
 Figure 2.8: Scorched Building from Drone Assassination Attempt
@@ -272,8 +370,8 @@ Figure 2.8: Scorched Building from Drone Assassination Attempt
 </div>
 </div>
 </div>
-<div id="pop-culture" class="section level2">
-<h2><span class="header-section-number">2.3</span> Pop-Culture</h2>
+<div id="pop-culture" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Pop-Culture<a href="ch-intro.html#pop-culture" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -287,7 +385,6 @@ Figure 2.8: Scorched Building from Drone Assassination Attempt
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -317,14 +414,31 @@ gitbook.start({
 "text": null
 },
 "download": ["ME143UAS.pdf", "ME143UAS.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
-},
-"search": true
+}
 });
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

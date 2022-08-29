@@ -22,6 +22,7 @@ knitr::include_graphics('images/general/UCM_heart.jpg')
 
 This page was published using **bookdown**[@R-bookdown] using RStudio in R Markdown and **knitr** [@xie2015].  The raw files can be found in the corresponding github page here: https://github.com/UCM-ME143/UCM-ME143.github.io
 
+
 <!--chapter:end:index.Rmd-->
 
 # Introduction {#ch-intro}
@@ -182,6 +183,78 @@ knitr::include_graphics('images/history/Venezuela2.jpg')
 
 # (PART) UAS Modeling and Control {-}
 
+# Vectors Notation
+
+## Rectangular Vectors
+A vector $v$ is composed of n-components of n-dimensionality. For example, a 3-dimensional vector will have 3 components, commonly represented as $x$, $y$, and $z$, or $i$, $j$, and $k$.
+
+$$ v \triangleq [v_1, v_2, v_3, ... v_n]$$
+
+A rectangular vector can be specified as the sum of the scalar multiples of the components of the vector with the members of the standard basis or reference axes.
+
+The basis is represented with unit vectors
+\begin{equation} 
+\begin{split}
+\hat{i} & =(1,0,0)\\
+\hat{j} & =(0,1,0)\\
+\hat{k} & =(0,0,1)
+\end{split}
+(\#eq:basis)
+\end{equation} 
+
+
+In rectangular vector notation, we could write this as
+
+\begin{equation}
+v = v_x\hat{i}+v_y\hat{j}+v_z\hat{k}
+(\#eq:rect)
+\end{equation}
+
+
+## Directional Vectors
+
+An alternative representation of vectors is to represent a vector as a direction and magnitude
+
+$$v = r\measuredangle \psi$$
+
+where $r$ is the magnitude and $\psi$ represents the direction of the vector.  
+
+This representation will not be used in this class, but is good to remember.  
+
+## Norms
+
+### Absolute Value Norm - L1
+
+### Euclidean Distance Norm - L2
+
+
+```
+testing
+```
+
+This `code` 
+
+
+>how about this
+>
+> -- test
+
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}$$
+
+
+```
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}$$
+```
+
+
+\begin{equation*} 
+\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
+\end{equation*} 
+
 # UAS Dynamics
 
 ## Fixed-Wing Models
@@ -191,6 +264,75 @@ knitr::include_graphics('images/history/Venezuela2.jpg')
 We describe our methods in this chapter.
 
 <!--chapter:end:03-dynamics.Rmd-->
+
+# Rotation Matrice Example
+
+## Getting Started
+
+
+Lets start by creating an empty script Start with the basic cleaning commands
+```{r eval=FALSE}
+clear; 
+```
+
+
+`clear` deletes all of the variables in your workspace - this makes sure that every time we run our code, we're always using the data from this run of the script, and not a previous run.`
+
+```{r eval=FALSE}
+clc; 
+```
+
+`clc` deletes all of the old messages in the console or command window. This makes sure that the only messages we see on our command window come from this run of the script, and not from a previous run.
+
+```{r eval=FALSE}
+close all; 
+```
+`close all` closes all of the previous plots and graph windows.  This way you know that the plots you see generated are new, and not old data.
+
+Let's load up our aircraft into Matlab
+
+```{r eval=FALSE}
+load Lab_Airplane.mat
+```
+
+Take a look at the new variables in your workspace
+
+```{r eval=FALSE}
+who -file Lab_Airplane.mat
+```
+
+The `who` command prints a list of variables - in this case, we've asked it about the airplane_model file
+
+    Your variables are: 
+    
+    airplane f
+    
+## Making an Airplane
+
+Lets take a closer look at the `airplane` variable
+
+```{r eval=FALSE}
+size(airplane)
+```
+
+    ans = 1x2
+        36    3
+        
+Airplane is a 36 row by 3 column matrix. This variable represents the x, y, and z coordinates of every corner in our airplane model.  There are 36 points within our airplane model.
+
+```{r eval=FALSE}
+airplane(1,:)
+```
+
+    ans = 1x3
+    
+        - 6.8000    0.5000    0.8000
+        
+The first point in our model occurs at the 3D point: -6.8 on the x-axis, 0.5 on the y-axis and 0.8 on the z-axis.
+
+Let's plot this
+
+<!--chapter:end:rotation_matrices.Rmd-->
 
 
 ```{r include=FALSE}

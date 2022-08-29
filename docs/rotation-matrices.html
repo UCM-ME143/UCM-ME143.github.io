@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Digital Systems | ME143 - Unmanned Aircraft Systems</title>
+  <title>Chapter 6 Rotation Matrices | ME143 - Unmanned Aircraft Systems</title>
   <meta name="description" content="Course material for ME143" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Digital Systems | ME143 - Unmanned Aircraft Systems" />
+  <meta property="og:title" content="Chapter 6 Rotation Matrices | ME143 - Unmanned Aircraft Systems" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Course material for ME143" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Digital Systems | ME143 - Unmanned Aircraft Systems" />
+  <meta name="twitter:title" content="Chapter 6 Rotation Matrices | ME143 - Unmanned Aircraft Systems" />
   
   <meta name="twitter:description" content="Course material for ME143" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-<link rel="next" href="vector-notation.html"/>
+<link rel="prev" href="uas-dynamics.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -197,10 +197,9 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>5.1</b> Fixed-Wing Models</a></li>
 <li class="chapter" data-level="5.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>5.2</b> Rotary-Wing Models</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html"><i class="fa fa-check"></i><b>6</b> Rotation Matrice Example</a>
+<li class="chapter" data-level="6" data-path="rotation-matrices.html"><a href="rotation-matrices.html"><i class="fa fa-check"></i><b>6</b> Rotation Matrices</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#making-an-airplane"><i class="fa fa-check"></i><b>6.2</b> Making an Airplane</a></li>
+<li class="chapter" data-level="6.1" data-path="rotation-matrices.html"><a href="rotation-matrices.html#example-1"><i class="fa fa-check"></i><b>6.1</b> Example 1</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -226,16 +225,41 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="digital-systems" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">A</span> Digital Systems<a href="digital-systems.html#digital-systems" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="rotation-matrices" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Rotation Matrices<a href="rotation-matrices.html#rotation-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="example-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Example 1<a href="rotation-matrices.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lets start by creating an empty script Start with the basic cleaning commands</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rotation-matrices.html#cb3-1" aria-hidden="true" tabindex="-1"></a>clear; </span></code></pre></div>
+<p><code>clear</code> deletes all of the variables in your workspace - this makes sure that every time we run our code, we’re always using the data from this run of the script, and not a previous run.`</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rotation-matrices.html#cb4-1" aria-hidden="true" tabindex="-1"></a>clc; </span></code></pre></div>
+<p><code>clc</code> deletes all of the old messages in the console or command window. This makes sure that the only messages we see on our command window come from this run of the script, and not from a previous run.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="rotation-matrices.html#cb5-1" aria-hidden="true" tabindex="-1"></a>close all; </span></code></pre></div>
+<p><code>close all</code> closes all of the previous plots and graph windows. This way you know that the plots you see generated are new, and not old data.</p>
+<p>Let’s load up our aircraft into Matlab</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="rotation-matrices.html#cb6-1" aria-hidden="true" tabindex="-1"></a>load Lab_Airplane.mat</span></code></pre></div>
+<p>Take a look at the new variables in your workspace</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="rotation-matrices.html#cb7-1" aria-hidden="true" tabindex="-1"></a>who <span class="sc">-</span>file Lab_Airplane.mat</span></code></pre></div>
+<p>The <code>who</code> command prints a list of variables - in this case, we’ve asked it about the airplane_model file</p>
+<pre><code>Your variables are: 
+
+airplane f</code></pre>
+<p>Lets take a closer look at the <code>airplane</code> variable</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="rotation-matrices.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>(airplane)</span></code></pre></div>
+<pre><code>ans = 1x2
+    36    3
+    </code></pre>
+<p>Airplane is a 36 row by 3 column matrix. This variable represents the x, y, and z coordinates of every corner in our airplane model. There are 36 points within our airplane model.</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vector-notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="uas-dynamics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

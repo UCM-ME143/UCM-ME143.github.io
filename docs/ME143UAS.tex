@@ -4,10 +4,10 @@
 %
 \documentclass[
 ]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -33,15 +33,48 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={ME143 - Unmanned Aircraft Systems},
-  pdfauthor={Dr.~Brandon Stark},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -50,7 +83,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -67,13 +100,47 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={ME143 - Unmanned Aircraft Systems},
+  pdfauthor={Dr.~Brandon Stark},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{ME143 - Unmanned Aircraft Systems}
 \author{Dr.~Brandon Stark}
-\date{2020-10-12}
+\date{2022-08-29}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -87,6 +154,8 @@
 \newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Solution}
@@ -129,23 +198,23 @@ Introduction to UAS
 \section{Language and Terminology}\label{language-and-terminology}}
 
 \begin{definition}[Unmanned Aircraft]
-\protect\hypertarget{def:defUA}{}{\label{def:defUA} \iffalse (Unmanned Aircraft) \fi{} }A drone, remote-controlled pilotless aircraft, or a human-designed device that is used to intended to be used for flight in the air that is operated without the possibility of direct human intervention from within or on the aircraft.
+\protect\hypertarget{def:defUA}{}\label{def:defUA}A drone, remote-controlled pilotless aircraft, or a human-designed device that is used to intended to be used for flight in the air that is operated without the possibility of direct human intervention from within or on the aircraft.
 \end{definition}
 
 \begin{definition}[Unmanned Aircraft System]
-\protect\hypertarget{def:defUAS}{}{\label{def:defUAS} \iffalse (Unmanned Aircraft System) \fi{} }An unmanned aircraft and all of its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the unmanned aircraft.
+\protect\hypertarget{def:defUAS}{}\label{def:defUAS}An unmanned aircraft and all of its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the unmanned aircraft.
 \end{definition}
 
 \begin{definition}[Small Unmanned Aircraft]
-\protect\hypertarget{def:defSUA}{}{\label{def:defSUA} \iffalse (Small Unmanned Aircraft) \fi{} }An unmanned aircraft that weighs less than 55 lbs on takeoff, including everything that is on board or otherwise attached to the aircraft.
+\protect\hypertarget{def:defSUA}{}\label{def:defSUA}An unmanned aircraft that weighs less than 55 lbs on takeoff, including everything that is on board or otherwise attached to the aircraft.
 \end{definition}
 
 \begin{definition}[Small Unmanned Aircraft System]
-\protect\hypertarget{def:defSUAS}{}{\label{def:defSUAS} \iffalse (Small Unmanned Aircraft System) \fi{} }A small unmanned aircraft and its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the small unmanned aircraft.
+\protect\hypertarget{def:defSUAS}{}\label{def:defSUAS}A small unmanned aircraft and its associated elements (including communication links and the components that control the small unmanned aircraft) that are required for the safe and efficient operation of the small unmanned aircraft.
 \end{definition}
 
 \begin{corollary}[Model Aircraft]
-\protect\hypertarget{cor:defMA}{}{\label{cor:defMA} \iffalse (Model Aircraft) \fi{} }In the current regulatory framework, there is no definition of a model aircraft or legal distinction between the flying toy you buy at Walmart, the RC plane from the hobby store or a 30 lb industrial drone. All are considered Unmanned Aircraft.
+\protect\hypertarget{cor:defMA}{}\label{cor:defMA}In the current regulatory framework, there is no definition of a model aircraft or legal distinction between the flying toy you buy at Walmart, the RC plane from the hobby store or a 30 lb industrial drone. All are considered Unmanned Aircraft.
 \end{corollary}
 
 Unmanned Aircraft refers to just to the object that flies, but is usually only used when there is a need to make a distinction. The same with small UAS (sUAS) and UAS - it's usually only used when there needs to be an explicit distinction between drones under 55 lbs and those that are heavier than 55 lbs.
@@ -349,6 +418,81 @@ This was a relatively high-profile assassination attempt of the Venezuela Presid
 \hypertarget{part-uas-modeling-and-control}{%
 \part{UAS Modeling and Control}\label{part-uas-modeling-and-control}}
 
+\hypertarget{vectors-notation}{%
+\chapter{Vectors Notation}\label{vectors-notation}}
+
+\hypertarget{rectangular-vectors}{%
+\section{Rectangular Vectors}\label{rectangular-vectors}}
+
+A vector \(v\) is composed of n-components of n-dimensionality. For example, a 3-dimensional vector will have 3 components, commonly represented as \(x\), \(y\), and \(z\), or \(i\), \(j\), and \(k\).
+
+\[ v \triangleq [v_1, v_2, v_3, ... v_n]\]
+
+A rectangular vector can be specified as the sum of the scalar multiples of the components of the vector with the members of the standard basis or reference axes.
+
+The basis is represented with unit vectors
+\begin{equation} 
+\begin{split}
+\hat{i} & =(1,0,0)\\
+\hat{j} & =(0,1,0)\\
+\hat{k} & =(0,0,1)
+\end{split}
+\label{eq:basis}
+\end{equation}
+
+In rectangular vector notation, we could write this as
+
+\begin{equation}
+v = v_x\hat{i}+v_y\hat{j}+v_z\hat{k}
+\label{eq:rect}
+\end{equation}
+
+\hypertarget{directional-vectors}{%
+\section{Directional Vectors}\label{directional-vectors}}
+
+An alternative representation of vectors is to represent a vector as a direction and magnitude
+
+\[v = r\measuredangle \psi\]
+
+where \(r\) is the magnitude and \(\psi\) represents the direction of the vector.
+
+This representation will not be used in this class, but is good to remember.
+
+\hypertarget{norms}{%
+\section{Norms}\label{norms}}
+
+\hypertarget{absolute-value-norm---l1}{%
+\subsection{Absolute Value Norm - L1}\label{absolute-value-norm---l1}}
+
+\hypertarget{euclidean-distance-norm---l2}{%
+\subsection{Euclidean Distance Norm - L2}\label{euclidean-distance-norm---l2}}
+
+\begin{verbatim}
+testing
+\end{verbatim}
+
+This \texttt{code}
+
+\begin{quote}
+how about this
+
+-- test
+\end{quote}
+
+\[\Theta = \begin{pmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}\]
+
+\begin{verbatim}
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}$$
+\end{verbatim}
+
+\begin{equation*} 
+\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
+\end{equation*}
+
 \hypertarget{uas-dynamics}{%
 \chapter{UAS Dynamics}\label{uas-dynamics}}
 
@@ -360,7 +504,101 @@ This was a relatively high-profile assassination attempt of the Venezuela Presid
 
 We describe our methods in this chapter.
 
+\hypertarget{rotation-matrice-example}{%
+\chapter{Rotation Matrice Example}\label{rotation-matrice-example}}
+
+\hypertarget{getting-started}{%
+\section{Getting Started}\label{getting-started}}
+
+Lets start by creating an empty script Start with the basic cleaning commands
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clear; }
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{clear} deletes all of the variables in your workspace - this makes sure that every time we run our code, we're always using the data from this run of the script, and not a previous run.`
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clc; }
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{clc} deletes all of the old messages in the console or command window. This makes sure that the only messages we see on our command window come from this run of the script, and not from a previous run.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{close all; }
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{close\ all} closes all of the previous plots and graph windows. This way you know that the plots you see generated are new, and not old data.
+
+Let's load up our aircraft into Matlab
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{load Lab\_Airplane.mat}
+\end{Highlighting}
+\end{Shaded}
+
+Take a look at the new variables in your workspace
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{who }\SpecialCharTok{{-}}\NormalTok{file Lab\_Airplane.mat}
+\end{Highlighting}
+\end{Shaded}
+
+The \texttt{who} command prints a list of variables - in this case, we've asked it about the airplane\_model file
+
+\begin{verbatim}
+Your variables are: 
+
+airplane f
+\end{verbatim}
+
+\hypertarget{making-an-airplane}{%
+\section{Making an Airplane}\label{making-an-airplane}}
+
+Lets take a closer look at the \texttt{airplane} variable
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{size}\NormalTok{(airplane)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ans = 1x2
+    36    3
+    
+\end{verbatim}
+
+Airplane is a 36 row by 3 column matrix. This variable represents the x, y, and z coordinates of every corner in our airplane model. There are 36 points within our airplane model.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{airplane}\NormalTok{(}\DecValTok{1}\NormalTok{,}\SpecialCharTok{:}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ans = 1x3
+
+    - 6.8000    0.5000    0.8000
+    
+\end{verbatim}
+
+The first point in our model occurs at the 3D point: -6.8 on the x-axis, 0.5 on the y-axis and 0.8 on the z-axis.
+
+Let's plot this
+
 \hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
 
 \hypertarget{appendix-appendix}{%
 \appendix}

@@ -7,6 +7,7 @@ rmd_files: ["index.Rmd",
             "01-intro.Rmd",
             "02-regulations.Rmd",
             "03-dynamics.Rmd",
+            "rotation_matrices.Rmd",
             "references.Rmd",
             "appendix.Rmd"]
 output_dir: "docs"

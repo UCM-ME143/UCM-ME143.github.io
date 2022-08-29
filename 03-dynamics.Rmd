@@ -1,5 +1,77 @@
 # (PART) UAS Modeling and Control {-}
 
+# Vectors Notation
+
+## Rectangular Vectors
+A vector $v$ is composed of n-components of n-dimensionality. For example, a 3-dimensional vector will have 3 components, commonly represented as $x$, $y$, and $z$, or $i$, $j$, and $k$.
+
+$$ v \triangleq [v_1, v_2, v_3, ... v_n]$$
+
+A rectangular vector can be specified as the sum of the scalar multiples of the components of the vector with the members of the standard basis or reference axes.
+
+The basis is represented with unit vectors
+\begin{equation} 
+\begin{split}
+\hat{i} & =(1,0,0)\\
+\hat{j} & =(0,1,0)\\
+\hat{k} & =(0,0,1)
+\end{split}
+(\#eq:basis)
+\end{equation} 
+
+
+In rectangular vector notation, we could write this as
+
+\begin{equation}
+v = v_x\hat{i}+v_y\hat{j}+v_z\hat{k}
+(\#eq:rect)
+\end{equation}
+
+
+## Directional Vectors
+
+An alternative representation of vectors is to represent a vector as a direction and magnitude
+
+$$v = r\measuredangle \psi$$
+
+where $r$ is the magnitude and $\psi$ represents the direction of the vector.  
+
+This representation will not be used in this class, but is good to remember.  
+
+## Norms
+
+### Absolute Value Norm - L1
+
+### Euclidean Distance Norm - L2
+
+
+```
+testing
+```
+
+This `code` 
+
+
+>how about this
+>
+> -- test
+
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}$$
+
+
+```
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}$$
+```
+
+
+\begin{equation*} 
+\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
+\end{equation*} 
+
 # UAS Dynamics
 
 ## Fixed-Wing Models

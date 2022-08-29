@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Digital Systems | ME143 - Unmanned Aircraft Systems</title>
+  <title>Chapter 4 Vectors Notation | ME143 - Unmanned Aircraft Systems</title>
   <meta name="description" content="Course material for ME143" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Digital Systems | ME143 - Unmanned Aircraft Systems" />
+  <meta property="og:title" content="Chapter 4 Vectors Notation | ME143 - Unmanned Aircraft Systems" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Course material for ME143" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Digital Systems | ME143 - Unmanned Aircraft Systems" />
+  <meta name="twitter:title" content="Chapter 4 Vectors Notation | ME143 - Unmanned Aircraft Systems" />
   
   <meta name="twitter:description" content="Course material for ME143" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-<link rel="next" href="vector-notation.html"/>
+<link rel="prev" href="regulations.html"/>
+<link rel="next" href="uas-dynamics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -226,16 +226,67 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="digital-systems" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">A</span> Digital Systems<a href="digital-systems.html#digital-systems" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="vectors-notation" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Vectors Notation<a href="vectors-notation.html#vectors-notation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="rectangular-vectors" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Rectangular Vectors<a href="vectors-notation.html#rectangular-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A vector <span class="math inline">\(v\)</span> is composed of n-components of n-dimensionality. For example, a 3-dimensional vector will have 3 components, commonly represented as <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span>, or <span class="math inline">\(i\)</span>, <span class="math inline">\(j\)</span>, and <span class="math inline">\(k\)</span>.</p>
+<p><span class="math display">\[ v \triangleq [v_1, v_2, v_3, ... v_n]\]</span></p>
+<p>A rectangular vector can be specified as the sum of the scalar multiples of the components of the vector with the members of the standard basis or reference axes.</p>
+<p>The basis is represented with unit vectors
+<span class="math display" id="eq:basis">\[\begin{equation}
+\begin{split}
+\hat{i} &amp; =(1,0,0)\\
+\hat{j} &amp; =(0,1,0)\\
+\hat{k} &amp; =(0,0,1)
+\end{split}
+\tag{4.1}
+\end{equation}\]</span></p>
+<p>In rectangular vector notation, we could write this as</p>
+<p><span class="math display" id="eq:rect">\[\begin{equation}
+v = v_x\hat{i}+v_y\hat{j}+v_z\hat{k}
+\tag{4.2}
+\end{equation}\]</span></p>
+</div>
+<div id="directional-vectors" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Directional Vectors<a href="vectors-notation.html#directional-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>An alternative representation of vectors is to represent a vector as a direction and magnitude</p>
+<p><span class="math display">\[v = r\measuredangle \psi\]</span></p>
+<p>where <span class="math inline">\(r\)</span> is the magnitude and <span class="math inline">\(\psi\)</span> represents the direction of the vector.</p>
+<p>This representation will not be used in this class, but is good to remember.</p>
+</div>
+<div id="norms" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Norms<a href="vectors-notation.html#norms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="absolute-value-norm---l1" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Absolute Value Norm - L1<a href="vectors-notation.html#absolute-value-norm---l1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="euclidean-distance-norm---l2" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Euclidean Distance Norm - L2<a href="vectors-notation.html#euclidean-distance-norm---l2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>testing</code></pre>
+<p>This <code>code</code></p>
+<blockquote>
+<p>how about this</p>
+<p>– test</p>
+</blockquote>
+<p><span class="math display">\[\Theta = \begin{pmatrix}\alpha &amp; \beta\\
+\gamma &amp; \delta
+\end{pmatrix}\]</span></p>
+<pre><code>$$\Theta = \begin{pmatrix}\alpha &amp; \beta\\
+\gamma &amp; \delta
+\end{pmatrix}$$</code></pre>
+<p><span class="math display">\[\begin{equation*}
+\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
+\end{equation*}\]</span></p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vector-notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="regulations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="uas-dynamics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
