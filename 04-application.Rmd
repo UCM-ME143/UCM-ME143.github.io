@@ -4,4 +4,9 @@ Some _significant_ applications are demonstrated in this chapter.
 
 ## Example one
 
+```{r pg1,echo=FALSE,  out.width='100%', fig.align='center'}
+knitr::include_url("https://ucm-me143.github.io/Lab02/1_Model_Visualization.html")
+```
+
+
 ## Example two

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 UAS Dynamics | ME143 - Unmanned Aircraft Systems</title>
+  <title>Chapter 6 UAS Dynamics | ME143 - Unmanned Aircraft Systems</title>
   <meta name="description" content="Course material for ME143" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 UAS Dynamics | ME143 - Unmanned Aircraft Systems" />
+  <meta property="og:title" content="Chapter 6 UAS Dynamics | ME143 - Unmanned Aircraft Systems" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Course material for ME143" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 UAS Dynamics | ME143 - Unmanned Aircraft Systems" />
+  <meta name="twitter:title" content="Chapter 6 UAS Dynamics | ME143 - Unmanned Aircraft Systems" />
   
   <meta name="twitter:description" content="Course material for ME143" />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Dr. Brandon Stark" />
 
 
-<meta name="date" content="2022-08-29" />
+<meta name="date" content="2022-09-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="vectors-notation.html"/>
+<link rel="prev" href="html-testing.html"/>
 <link rel="next" href="rotation-matrice-example.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -192,15 +192,16 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.2" data-path="vectors-notation.html"><a href="vectors-notation.html#euclidean-distance-norm---l2"><i class="fa fa-check"></i><b>4.3.2</b> Euclidean Distance Norm - L2</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="uas-dynamics.html"><a href="uas-dynamics.html"><i class="fa fa-check"></i><b>5</b> UAS Dynamics</a>
+<li class="chapter" data-level="5" data-path="html-testing.html"><a href="html-testing.html"><i class="fa fa-check"></i><b>5</b> HTML Testing</a></li>
+<li class="chapter" data-level="6" data-path="uas-dynamics.html"><a href="uas-dynamics.html"><i class="fa fa-check"></i><b>6</b> UAS Dynamics</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>5.1</b> Fixed-Wing Models</a></li>
-<li class="chapter" data-level="5.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>5.2</b> Rotary-Wing Models</a></li>
+<li class="chapter" data-level="6.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>6.1</b> Fixed-Wing Models</a></li>
+<li class="chapter" data-level="6.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>6.2</b> Rotary-Wing Models</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html"><i class="fa fa-check"></i><b>6</b> Rotation Matrice Example</a>
+<li class="chapter" data-level="7" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html"><i class="fa fa-check"></i><b>7</b> Rotation Matrice Example</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#making-an-airplane"><i class="fa fa-check"></i><b>6.2</b> Making an Airplane</a></li>
+<li class="chapter" data-level="7.1" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#getting-started"><i class="fa fa-check"></i><b>7.1</b> Getting Started</a></li>
+<li class="chapter" data-level="7.2" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#making-an-airplane"><i class="fa fa-check"></i><b>7.2</b> Making an Airplane</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -226,13 +227,15 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="uas-dynamics" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> UAS Dynamics<a href="uas-dynamics.html#uas-dynamics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="fixed-wing-models" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Fixed-Wing Models<a href="uas-dynamics.html#fixed-wing-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="uas-dynamics" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> UAS Dynamics<a href="uas-dynamics.html#uas-dynamics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<iframe src="Lab02/2_Rotation_Matrices.html" width="100%" height="800px" data-external="1">
+</iframe>
+<div id="fixed-wing-models" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Fixed-Wing Models<a href="uas-dynamics.html#fixed-wing-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="rotary-wing-models" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Rotary-Wing Models<a href="uas-dynamics.html#rotary-wing-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rotary-wing-models" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Rotary-Wing Models<a href="uas-dynamics.html#rotary-wing-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We describe our methods in this chapter.</p>
 
 </div>
@@ -242,7 +245,7 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="vectors-notation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="html-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="rotation-matrice-example.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

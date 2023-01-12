@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Rotation Matrice Example | ME143 - Unmanned Aircraft Systems</title>
+  <title>Chapter 7 Rotation Matrice Example | ME143 - Unmanned Aircraft Systems</title>
   <meta name="description" content="Course material for ME143" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Rotation Matrice Example | ME143 - Unmanned Aircraft Systems" />
+  <meta property="og:title" content="Chapter 7 Rotation Matrice Example | ME143 - Unmanned Aircraft Systems" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Course material for ME143" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Rotation Matrice Example | ME143 - Unmanned Aircraft Systems" />
+  <meta name="twitter:title" content="Chapter 7 Rotation Matrice Example | ME143 - Unmanned Aircraft Systems" />
   
   <meta name="twitter:description" content="Course material for ME143" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Dr. Brandon Stark" />
 
 
-<meta name="date" content="2022-08-29" />
+<meta name="date" content="2022-09-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -192,15 +192,16 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.2" data-path="vectors-notation.html"><a href="vectors-notation.html#euclidean-distance-norm---l2"><i class="fa fa-check"></i><b>4.3.2</b> Euclidean Distance Norm - L2</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="uas-dynamics.html"><a href="uas-dynamics.html"><i class="fa fa-check"></i><b>5</b> UAS Dynamics</a>
+<li class="chapter" data-level="5" data-path="html-testing.html"><a href="html-testing.html"><i class="fa fa-check"></i><b>5</b> HTML Testing</a></li>
+<li class="chapter" data-level="6" data-path="uas-dynamics.html"><a href="uas-dynamics.html"><i class="fa fa-check"></i><b>6</b> UAS Dynamics</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>5.1</b> Fixed-Wing Models</a></li>
-<li class="chapter" data-level="5.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>5.2</b> Rotary-Wing Models</a></li>
+<li class="chapter" data-level="6.1" data-path="uas-dynamics.html"><a href="uas-dynamics.html#fixed-wing-models"><i class="fa fa-check"></i><b>6.1</b> Fixed-Wing Models</a></li>
+<li class="chapter" data-level="6.2" data-path="uas-dynamics.html"><a href="uas-dynamics.html#rotary-wing-models"><i class="fa fa-check"></i><b>6.2</b> Rotary-Wing Models</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html"><i class="fa fa-check"></i><b>6</b> Rotation Matrice Example</a>
+<li class="chapter" data-level="7" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html"><i class="fa fa-check"></i><b>7</b> Rotation Matrice Example</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#making-an-airplane"><i class="fa fa-check"></i><b>6.2</b> Making an Airplane</a></li>
+<li class="chapter" data-level="7.1" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#getting-started"><i class="fa fa-check"></i><b>7.1</b> Getting Started</a></li>
+<li class="chapter" data-level="7.2" data-path="rotation-matrice-example.html"><a href="rotation-matrice-example.html#making-an-airplane"><i class="fa fa-check"></i><b>7.2</b> Making an Airplane</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -226,10 +227,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rotation-matrice-example" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Rotation Matrice Example<a href="rotation-matrice-example.html#rotation-matrice-example" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="getting-started" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Getting Started<a href="rotation-matrice-example.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rotation-matrice-example" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Rotation Matrice Example<a href="rotation-matrice-example.html#rotation-matrice-example" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="getting-started" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Getting Started<a href="rotation-matrice-example.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lets start by creating an empty script Start with the basic cleaning commands</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rotation-matrice-example.html#cb3-1" aria-hidden="true" tabindex="-1"></a>clear; </span></code></pre></div>
 <p><code>clear</code> deletes all of the variables in your workspace - this makes sure that every time we run our code, we’re always using the data from this run of the script, and not a previous run.`</p>
@@ -246,8 +247,8 @@ div.csl-indent {
 
 airplane f</code></pre>
 </div>
-<div id="making-an-airplane" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Making an Airplane<a href="rotation-matrice-example.html#making-an-airplane" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="making-an-airplane" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Making an Airplane<a href="rotation-matrice-example.html#making-an-airplane" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lets take a closer look at the <code>airplane</code> variable</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="rotation-matrice-example.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>(airplane)</span></code></pre></div>
 <pre><code>ans = 1x2

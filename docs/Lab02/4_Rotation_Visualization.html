@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2022a"><title>Lab 2 - Part 1 - Rotating Aircraft Visualization</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(192, 76, 11); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.CodeBlock { background-color: #F5F5F5; margin: 10px 0 10px 0; }
+.S2 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 1px solid rgb(191, 191, 191); border-bottom: 0px none rgb(33, 33, 33); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S3 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 0px none rgb(33, 33, 33); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S4 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 0px none rgb(33, 33, 33); border-bottom: 1px solid rgb(191, 191, 191); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S5 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S6 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 1px solid rgb(191, 191, 191); border-bottom: 1px solid rgb(191, 191, 191); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S7 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S8 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S9 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }</style></head><body><div class = rtcContent><h1  class = 'S0' id = 'T_0678DD13' ><span>Lab 2 - Part 1 - Rotating Aircraft Visualization</span></h1><div  class = 'S1'><span></span></div><div  class = 'S1'><span>Lets have some fun with the Airplane Model</span></div><div  class = 'S1'><span>Let's load up our Airplane</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S2'><span style="white-space: pre"><span >clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >clc;</span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >close </span><span style="color: rgb(167, 9, 245);">all</span><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >load </span><span style="color: rgb(167, 9, 245);">Lab_Airplane.mat</span></span></div></div></div><div  class = 'S5'><span>Lets take a closer look at the workspace. Our airplane variable is a 36 x 3 matrix. However, in order for us to use a rotation matrix on it, we'll need to switch some things up.</span></div><div  class = 'S1'><span>First, we need to transpose it to a 3 x 36</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >airplane_pts = airplane';</span></span></div></div></div><div  class = 'S5'><span>The original dimensions were in meters, but let's write this out in ft. Multiply everything by a scale factor</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S2'><span style="white-space: pre"><span >airplane_scale = 3.28;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >airplane_pts = airplane_pts*airplane_scale;</span></span></div></div></div><div  class = 'S5'><span>Now let's input the rotation amounts</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S2'><span style="white-space: pre"><span >psi = </span></span><span>68</span><span style="white-space: pre"><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >theta = </span></span><span>-3</span><span style="white-space: pre"><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >phi = </span></span><span>-9</span><span style="white-space: pre"><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >T_2BFE = Transform_To_Body_From_Earth(psi,theta,phi);</span></span></div></div></div><div  class = 'S5'><span>Transpose the result to get </span><span style=' font-weight: bold;'>Transform</span><span> To </span><span style=' font-weight: bold;'>EARTH</span><span> From </span><span style=' font-weight: bold;'>BODY</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S2'><span style="white-space: pre"><span >T_2EFB = T_2BFE';</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >airplane_pts = T_2EFB*airplane_pts;</span></span></div></div></div><div  class = 'S5'><span>Next, we'll need to transpose the airplane poinnts back to a 36x3</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >airplane_pts = airplane_pts';</span></span></div></div></div><div  class = 'S5'><span>And now we can draw it in 3D - if you did this in a Live Script, you could adjust the rotation angles and see the result in real-time</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S2'><span style="white-space: pre"><span >figure; hold </span><span style="color: rgb(167, 9, 245);">on</span><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >patch(</span><span style="color: rgb(167, 9, 245);">'Faces'</span><span >,f,</span><span style="color: rgb(167, 9, 245);">'Vertices'</span><span >,airplane_pts,</span><span style="color: rgb(167, 9, 245);">'FaceColor'</span><span >,</span><span style="color: rgb(167, 9, 245);">'green'</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >grid </span><span style="color: rgb(167, 9, 245);">on</span><span >; axis </span><span style="color: rgb(167, 9, 245);">equal</span><span >; </span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >title(</span><span style="color: rgb(167, 9, 245);">'Aircraft with Roll, Pitch Yaw'</span><span >); </span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >xlabel(</span><span style="color: rgb(167, 9, 245);">'World Frame - North (ft)'</span><span >); ylabel(</span><span style="color: rgb(167, 9, 245);">'World Frame - East (ft)'</span><span >); zlabel(</span><span style="color: rgb(167, 9, 245);">'World Frame - Down (ft)'</span><span >); </span></span></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span >set(gca, </span><span style="color: rgb(167, 9, 245);">'ZDir'</span><span >,</span><span style="color: rgb(167, 9, 245);">'reverse'</span><span >); set(gca, </span><span style="color: rgb(167, 9, 245);">'YDir'</span><span >,</span><span style="color: rgb(167, 9, 245);">'reverse'</span><span >); </span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >axis([-40 40 -40 40, -40 40]); view([-77.0 66.0])</span></span></div></div></div><div  class = 'S5'><span>So there you have it - this is how we can utilize Rotation Matrices in Aerospace. </span></div><div  class = 'S1'><span></span></div><h2  class = 'S7'><span>What to Submit:</span></h2><ul  class = 'S8'><li  class = 'S9'><span>Submit two screenshots of the aircraft in different orientations</span></li></ul><div  class = 'S1'></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% Lab 2 - Part 1 - Rotating Aircraft Visualization
+% 
+% 
+% Lets have some fun with the Airplane Model
+% 
+% Let's load up our Airplane
+
+clear;
+clc;
+close all;
+load Lab_Airplane.mat
+%% 
+% Lets take a closer look at the workspace. Our airplane variable is a 36 x 
+% 3 matrix. However, in order for us to use a rotation matrix on it, we'll need 
+% to switch some things up.
+% 
+% First, we need to transpose it to a 3 x 36
+
+airplane_pts = airplane';
+%% 
+% The original dimensions were in meters, but let's write this out in ft. Multiply 
+% everything by a scale factor
+
+airplane_scale = 3.28;
+airplane_pts = airplane_pts*airplane_scale;
+%% 
+% Now let's input the rotation amounts
+
+psi = 68;
+theta = -3;
+phi = -9;
+T_2BFE = Transform_To_Body_From_Earth(psi,theta,phi);
+%% 
+% Transpose the result to get *Transform* To *EARTH* From *BODY*
+
+T_2EFB = T_2BFE';
+airplane_pts = T_2EFB*airplane_pts;
+%% 
+% Next, we'll need to transpose the airplane poinnts back to a 36x3
+
+airplane_pts = airplane_pts';
+%% 
+% And now we can draw it in 3D - if you did this in a Live Script, you could 
+% adjust the rotation angles and see the result in real-time
+
+figure; hold on;
+patch('Faces',f,'Vertices',airplane_pts,'FaceColor','green');
+grid on; axis equal; 
+title('Aircraft with Roll, Pitch Yaw'); 
+xlabel('World Frame - North (ft)'); ylabel('World Frame - East (ft)'); zlabel('World Frame - Down (ft)'); 
+set(gca, 'ZDir','reverse'); set(gca, 'YDir','reverse'); 
+axis([-40 40 -40 40, -40 40]); view([-77.0 66.0])
+%% 
+% So there you have it - this is how we can utilize Rotation Matrices in Aerospace. 
+% 
+% 
+%% What to Submit:
+%% 
+% * Submit two screenshots of the aircraft in different orientations
+%% 
+%
+##### SOURCE END #####
+-->
+</div></body></html>

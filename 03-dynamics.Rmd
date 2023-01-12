@@ -72,7 +72,17 @@ $$\Theta = \begin{pmatrix}\alpha & \beta\\
 \frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
 \end{equation*} 
 
+# HTML Testing
+
+```{r html_testing, echo=FALSE, out.width="100%"}
+knitr::include_url('Lab02/1_Model_Visualization.html',height = "800px")
+```
+
 # UAS Dynamics
+
+```{r html_testing2, echo=FALSE, out.width="100%"}
+knitr::include_url('Lab02/2_Rotation_Matrices.html',height = "800px")
+```
 
 ## Fixed-Wing Models
 

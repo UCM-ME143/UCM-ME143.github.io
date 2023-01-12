@@ -34,6 +34,7 @@ directional-vectors
 norms
 absolute-value-norm---l1
 euclidean-distance-norm---l2
+html-testing
 uas-dynamics
 fixed-wing-models
 rotary-wing-models
