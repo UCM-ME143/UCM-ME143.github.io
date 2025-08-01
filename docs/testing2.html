@@ -28,7 +28,7 @@
       const code = ((parseInt(id, 36) + sum) % (36 ** 4)).toString(36).toUpperCase().padStart(4, '0');
 
       // Combine into cert
-      const cert = `COE${code}${id}`;
+      const cert = `COE-${code}-${id}`;
 
       // Format date
       const date = new Date().toLocaleDateString(undefined, {
