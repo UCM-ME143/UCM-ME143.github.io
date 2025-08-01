@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FOOP Cert Tester</title>
+</head>
+<body>
+  <h1>FOOP Logger Test</h1>
+
+  <label for="nameInput">Name:</label>
+  <input id="nameInput" type="text" placeholder="Enter name" />
+  <button id="submitBtn">Submit</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    const endpoint = "https://airtable-api-hazel.vercel.app/api/foop-log"; // Replace this
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      const name = document.getElementById("nameInput").value.trim() || "Participant";
+
+      // Generate 4-char ID
+      const raw = Math.floor(Math.random() * 1679616); // under 36^4
+      const id = raw.toString(36).toUpperCase().padStart(4, '0');
+
+      // Compute 4-char CODE
+      const sum = [...name].reduce((a, c) => a + c.charCodeAt(0), 0);
+      const code = ((parseInt(id, 36) + sum) % (36 ** 4)).toString(36).toUpperCase().padStart(4, '0');
+
+      // Combine into cert
+      const cert = `COE${code}${id}`;
+
+      // Format date
+      const date = new Date().toLocaleDateString(undefined, {
+        year: "numeric", month: "long", day: "numeric"
+      });
+
+      const payload = { name, cert, date };
+
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("output").textContent =
+          `✅ Sent:\n${JSON.stringify(payload, null, 2)}\n\n🛰️ Response:\n${JSON.stringify(data, null, 2)}`;
+      })
+      .catch(err => {
+        document.getElementById("output").textContent = `❌ Error:\n${err}`;
+      });
+    });
+  </script>
+</body>
+</html>
